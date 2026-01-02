@@ -1,12 +1,12 @@
 master_password= input("Enter the master password:")
 
 
-def view():
+def view():                                # function to view the passwords which are saved in the txt file 
     with open('passwords.txt', 'r') as f:
         for line in f.readlines():
             print(line)
 
-def add():
+def add():                                            # function to add a username as well as its respective password to the txt file 
     with open('passwords.txt', 'a') as f:
         user_name = input("Enter the username: ")
         pwd = input("Enter the password: ")
@@ -21,16 +21,16 @@ while True:
     print("3.Exit the Password Manager")
     choice = int(input("Please enter your choice: "))
 
-    if choice == 1:
+    if choice == 1:                                            # when user wants to view the passwords 
         print("Here are your stored passwords:")
         view()
         pass
 
-    if choice == 2:
+    if choice == 2:                        # when user wants to add the passwords 
         add()
         pass
 
-    if choice == 3:
+    if choice == 3:                                                                   # when user wants to exit the program 
         print("Exiting the Password Manager. Goodbye!")
         break
 
