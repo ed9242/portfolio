@@ -24,13 +24,9 @@ if hashlib.sha256(master_password.encode()).hexdigest() != stored_pass:
 else:
     print("Access granted!")                # if the user entered the correct master password 
 
-<<<<<<< HEAD
-def view():                                # function to view the passwords which are saved in the txt file 
-    with open('passwords.txt', 'r') as f:
-=======
+
 def view():
     with open('passwords.txt', 'r') as f:               # function to view the stored passwords 
->>>>>>> 3c406d9 (Added master password authication using hashing and updated comments)
         for line in f.readlines():
             data = line.rstrip() 
             user, passw = data.split("|")
@@ -38,7 +34,7 @@ def view():
 
 def add():                                            # function to add a username as well as its respective password to the txt file 
     with open('passwords.txt', 'a') as f:
-        user_name = input("Enter the username: ")               # function to add a new password 
+        user_name = input("Enter the username: ")              
         pwd = input("Enter the password: ")
         f.write(user_name + "|" + pwd + "\n")
         print("Password added successfully!")
@@ -51,31 +47,17 @@ while True:
     print("3.Exit the Password Manager")
     choice = int(input("Please enter your choice: "))
 
-<<<<<<< HEAD
     if choice == 1:                                            # when user wants to view the passwords 
         print("Here are your stored passwords:")
         view()
         pass
 
-    if choice == 2:                        # when user wants to add the passwords 
+    elif choice == 2:         # if the user wants to add a new password then the add function is called
         add()
         pass
 
-    if choice == 3:                                                                   # when user wants to exit the program 
-        print("Exiting the Password Manager. Goodbye!")
-=======
-    if choice == 1:
-        print("Here are your stored passwords:")                # if the user wants to view the stored passwords then the view function is called 
-        view()
-        pass
-
-    if choice == 2:         # if the user wants to add a new password then the add function is called
-        add()
-        pass
-
-    if choice == 3:
+    elif choice == 3:
         print("Exiting the Password Manager. Goodbye!")             # if the user wants to exit the program
->>>>>>> 3c406d9 (Added master password authication using hashing and updated comments)
         break
 
 
